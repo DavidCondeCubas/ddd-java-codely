@@ -1,10 +1,7 @@
 package tv.codely.mooc.courses.infrastructure.persistence;
 
 import org.junit.jupiter.api.Test;
-import tv.codely.mooc.courses.domain.Course;
-import tv.codely.mooc.courses.domain.CourseDuration;
-import tv.codely.mooc.courses.domain.CourseId;
-import tv.codely.mooc.courses.domain.CourseName;
+import tv.codely.mooc.courses.domain.*;
 
 import java.util.Optional;
 
@@ -17,7 +14,7 @@ class InMemoryCourseRepositoryShould {
         InMemoryCourseRepository repository = new InMemoryCourseRepository();
         Course course = new Course(
             new CourseId("52ab832e-7641-11ec-90d6-0242ac120003"),
-            new CourseName("test-name"),
+            CourseNameMother.random(),
             new CourseDuration("test-duration"));
         repository.save(course);
     }
